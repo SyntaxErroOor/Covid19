@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/tv_goodmorning"
+                style="@style/good_mornin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="32dp"
+                android:paddingTop="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/good_morning_fullname" />
+
+            <ImageView
+                android:id="@+id/notification_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/notification_icon"
+                app:layout_constraintBottom_toBottomOf="@id/tv_goodmorning"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_goodmorning"
+                app:layout_constraintTop_toTopOf="@id/tv_goodmorning" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_howareu"
+            style="@style/how_are_you"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/how_are_you_feeling_today" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="#2796B7"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toTopOf="@id/cv_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_howareu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <org.eazegraph.lib.charts.PieChart
+                    android:id="@+id/pie_chart"
+                    android:layout_width="220dp"
+                    android:layout_height="180dp"
+                    android:paddingEnd="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:egUsePieRotation="true"
+                    app:egValueTextSize="15sp"
+                    app:egLegendTextSize="8sp"/>
+
+                <View
+                    app:layout_constraintHorizontal_bias="0"
+                    android:id="@+id/v1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/v2"
+                    android:background="@android:color/holo_green_light"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/pie_chart"
+                    app:layout_constraintTop_toTopOf="@id/pie_chart"
+                    />
+                <TextView
+                    android:paddingStart="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cases"
+                    android:textColor="#FFF"
+                    app:layout_constraintStart_toEndOf="@+id/v1"
+                    app:layout_constraintBottom_toBottomOf="@+id/v1"
+                    app:layout_constraintTop_toTopOf="@id/v1"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/v2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/v4"
+                    android:background="@android:color/holo_blue_light"
+                    app:layout_constraintStart_toStartOf="@+id/v1"
+                    app:layout_constraintTop_toBottomOf="@+id/v1"
+                    />
+                <TextView
+                    android:paddingStart="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Recovered"
+                    android:textColor="#FFF"
+                    app:layout_constraintStart_toEndOf="@+id/v2"
+                    app:layout_constraintBottom_toBottomOf="@+id/v2"
+                    app:layout_constraintTop_toTopOf="@id/v2"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/v4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@android:color/holo_red_light"
+                    app:layout_constraintStart_toStartOf="@+id/v2"
+                    app:layout_constraintTop_toBottomOf="@+id/v2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+                <TextView
+                    android:paddingStart="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Deaths"
+                    android:textColor="#FFF"
+                    app:layout_constraintStart_toEndOf="@+id/v4"
+                    app:layout_constraintTop_toTopOf="@id/v4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/v4"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="#E45857"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <ImageView
+
+                    android:id="@+id/iv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/virologist"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_self_checker"
+                    style="@style/statistics"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/self_checker"
+                    app:layout_constraintBottom_toTopOf="@id/tv_self_cheacker_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_2"
+                    app:layout_constraintTop_toTopOf="@id/iv_2" />
+
+                <TextView
+                    android:id="@+id/tv_self_cheacker_details"
+                    style="@style/the_coronav"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/the_coronav"
+                    app:layout_constraintBottom_toTopOf="@id/btn_checkup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_self_checker"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_self_checker" />
+
+                <TextView
+                    android:id="@+id/btn_checkup"
+                    style="@style/let_s_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_screen_retangle_for_buttons"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingStart="23dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="23dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/let_s_check_up"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_2"
+                    app:layout_constraintStart_toStartOf="@id/tv_self_cheacker_details"
+                    app:layout_constraintTop_toBottomOf="@id/tv_self_cheacker_details" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="#F4F4F4" />
+
+
+        <TextView
+            style="@style/stay_at_hom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="0.75"
+            android:paddingStart="32dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="32dp"
+            android:text="@string/stay_at_home_nsave_yourself_and_the_world" />
+
+        <TextView
+            style="@style/get_the_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="32dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="32dp"
+            android:text="@string/stay_at_home_desc" />
+
+
+        <TextView
+            style="@style/stay_at_hom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="0.75"
+            android:paddingStart="32dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="32dp"
+            android:text="@string/symptoms" />
+
+        <TextView
+            style="@style/get_the_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="32dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="32dp"
+            android:text="@string/symptoms_desc" />
+
+
+    </LinearLayout>
+</ScrollView>
