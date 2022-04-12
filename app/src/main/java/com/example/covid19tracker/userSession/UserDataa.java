@@ -41,6 +41,10 @@ public class UserDataa {
         return mSharedPreferences.getString(KEY_NAME,null);
     }
 
+    public void deleteSavedData(){
+        mEditor.clear();
+        mEditor.apply();
+    }
     public boolean isLogin(){
         return mSharedPreferences.getBoolean(KEY_STATUS,false);
     }

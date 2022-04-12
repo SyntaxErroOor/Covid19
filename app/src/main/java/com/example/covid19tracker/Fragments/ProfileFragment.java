@@ -1,5 +1,6 @@
 package com.example.covid19tracker.Fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,7 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.covid19tracker.Authentication.LoginActivity;
 import com.example.covid19tracker.R;
+import com.example.covid19tracker.userSession.UserDataa;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,8 +30,9 @@ import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
-    private TextView nameTv, phoneTv, emailTv, ageTv, genderTv, dateLastTv, resultLastTv, symtomsLastTv;
+    private TextView nameTv, phoneTv, emailTv, ageTv, genderTv, dateLastTv, resultLastTv, symtomsLastTv, tvLogOut;
     private ProgressBar pb;
+    private UserDataa mDataa;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -86,7 +90,15 @@ public class ProfileFragment extends Fragment {
         symtomsLastTv = v.findViewById(R.id.tv_symptoms);
         pb = v.findViewById(R.id.pb);
         pb.setVisibility(View.VISIBLE);
+        mDataa=new UserDataa(getContext());
+        tvLogOut=v.findViewById(R.id.tv_logout);
+        tvLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDataa.deleteSavedData();
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getContext(), LoginActivity.class));
+            }
+        });
     }
-
-
 }

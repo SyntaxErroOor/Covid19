@@ -47,4 +47,5 @@
     <string name="result_of_last_check">Result of last check:</string>
     <string name="symptoms_of_last_check">Symptoms of last check:</string>
     <string name="symptoms_1_symptoms_2">Symptoms 1, Symptoms 2</string>
+    <string name="log_out">Log Out</string>
 </resources>
