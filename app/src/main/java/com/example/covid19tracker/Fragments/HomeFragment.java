@@ -76,15 +76,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     int cases = Integer.parseInt(response.body().getTodayCases());
                     int recovered = Integer.parseInt(response.body().getTodayRecovered());
                     int deaths = Integer.parseInt(response.body().getTodayDeaths());
-                    int totalToday=cases+recovered+deaths;
-                    Log.d("TAG", totalToday+"");
+//                    int totalToday=cases+recovered+deaths;
+//                    Log.d("TAG", totalToday+"");
                     updatePieChart(cases,recovered,deaths);
                 }
             }
 
             @Override
             public void onFailure(Call<StatisticsResponse> call, Throwable t) {
-
+                    Log.d("onFaliure", t.toString());
             }
         });
     }
@@ -106,9 +106,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //            case R.id.btn_show:
 //                break;
             case R.id.btn_checkup:
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.fragment_container,
-                        new NewsFragment()).commit();
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction().replace(R.id.fragment_container,
+//                        new NewsFragment()).commit();
                 break;
         }
 

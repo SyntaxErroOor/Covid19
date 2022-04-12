@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView tvRegister, tvForgetPassword;
     private EditText edtEmail, edtPassword;
     private FloatingActionButton btnLogIn;
-    private ProgressBar pb;
+    private FrameLayout pb;
     UserDataa mUserDataa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

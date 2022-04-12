@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19Tracker">
         <activity
+            android:name=".result.ResultNegativeActivity"
+            android:exported="false" >
+
+        </activity>
+        <activity
+            android:name=".result.ResultPositiveActivity"
+            android:exported="false" >
+        </activity>
+        <activity
             android:name=".Splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -20,22 +29,16 @@
         </activity>
         <activity
             android:name=".Home.HomeActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Authentication.ForgetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".Authentication.RegisterActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Authentication.LoginActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

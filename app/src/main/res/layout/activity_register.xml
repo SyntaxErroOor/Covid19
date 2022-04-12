@@ -4,202 +4,257 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DFF0F5"
     tools:context=".Authentication.RegisterActivity">
 
-    <RelativeLayout
-        android:id="@+id/layout_1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/layout_2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintVertical_weight="1.2">
-
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_alignParentLeft="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:background="@drawable/register_shape_1" />-->
-
-        <TextView
-            android:id="@+id/header_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/register_shape_1"
-            android:gravity="bottom"
-            android:letterSpacing="0.03"
-            android:lineSpacingMultiplier="0.6"
-            android:paddingLeft="32dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="16dp"
-            android:text="Create\nAccount"
-            android:textColor="#FFF"
-            android:textSize="46sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:id="@+id/layout_2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/layout_3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_1"
-        app:layout_constraintVertical_weight="1.2">
-
-        <EditText
-            android:id="@+id/ed_fullname"
-            style="@style/text_inside_edt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/edt_rectangle_white"
-            android:ems="10"
-            android:hint="Full Name"
-            android:inputType="text"
-            android:paddingLeft="16dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp" />
-
-        <EditText
-            android:id="@+id/ed_age"
-            style="@style/text_inside_edt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/edt_rectangle_white"
-            android:ems="10"
-            android:hint="Age"
-            android:inputType="number"
-            android:paddingLeft="16dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp" />
-
-        <EditText
-            android:id="@+id/ed_email"
-            style="@style/text_inside_edt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/edt_rectangle_white"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="16dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp" />
-
-        <EditText
-            android:id="@+id/ed_password"
-            style="@style/text_inside_edt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/edt_rectangle_white"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingLeft="16dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp" />
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@id/layout_3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_2"
-        app:layout_constraintVertical_weight="1">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_marginTop="32dp"
-            android:id="@+id/white_curve"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/register_shape_2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/layout_3"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/cl1">
 
-            <TextView
-                style="@style/sign_in"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:paddingLeft="16dp"
-                android:text="Register"
-                android:textStyle="bold" />
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/arrow_forward_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/signin_shape1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/header_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="128dp"
+                android:gravity="center_vertical"
+                android:letterSpacing="0.03"
+                android:lineSpacingMultiplier="0.6"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="16dp"
+                android:text="Create\nAccount"
+                android:textColor="#FFF"
+                android:textSize="46sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/layout_2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginRight="32dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/layout_3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:text="Log in"
-        android:textColor="#013140"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-    <ProgressBar
+                <EditText
+                    android:id="@+id/ed_fullname"
+                    style="@style/text_inside_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edt_rectangle_white"
+                    android:ems="10"
+                    android:hint="Full Name"
+                    android:inputType="text"
+                    android:paddingStart="16dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp" />
+
+
+                <EditText
+                    android:id="@+id/ed_email"
+                    style="@style/text_inside_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edt_rectangle_white"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="16dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp" />
+
+                <EditText
+                    android:id="@+id/ed_phone"
+                    style="@style/text_inside_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edt_rectangle_white"
+                    android:ems="10"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    android:paddingStart="16dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp" />
+
+                <EditText
+                    android:id="@+id/ed_password"
+                    style="@style/text_inside_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edt_rectangle_white"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ed_age"
+                        style="@style/text_inside_edt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edt_rectangle_white"
+                        android:ems="10"
+                        android:hint="Age"
+                        android:inputType="number"
+                        android:paddingStart="16dp"
+                        android:paddingTop="13dp"
+                        android:paddingBottom="13dp" />
+
+                    <TextView
+                        style="@style/text_inside_edt"
+                        android:layout_width="0dp"
+
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:ems="10"
+                        android:gravity="center|top"
+                        android:text="Gender"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radio_male"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="Male" />
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="Female" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/layout_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_login"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_2">
+
+
+                <LinearLayout
+                    android:id="@+id/layout_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/sign_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:paddingLeft="16dp"
+                        android:text="Register"
+                        android:textStyle="bold" />
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_forward_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:text="Log in"
+                android:textColor="#013140"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:clickable="true"
         android:id="@+id/pb"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5B013140"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstrains" />
+        tools:visibility="visible"
+        android:focusable="true">
 
-
-
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

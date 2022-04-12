@@ -3,25 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable-v24/circle_red.xml" value="0.1865" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/arrow_forward_24.xml" value="0.2375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/button_circle.xml" value="0.2585" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/call_doctor_result_page.xml" value="0.1865" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/edt_recangle.xml" value="0.2585" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/edt_rectangle_white.xml" value="0.2585" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/green_circle.xml" value="0.1865" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/home_button_result_page.xml" value="0.1865" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/home_screen_retangle_for_buttons.xml" value="0.154" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/nav_corners.xml" value="0.2185" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/path_3.xml" value="0.2585" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/rect_news.xml" value="0.2265" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/rectangle_6.xml" value="0.2585" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/red_circle.xml" value="0.1865" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/result_page_tv.xml" value="0.1865" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/drawable/splash.xml" value="0.127" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_forget_password.xml" value="0.22826086956521738" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_home.xml" value="0.259375" />
-        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_login.xml" value="0.259375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_register.xml" value="0.2129115006412997" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_result_negative.xml" value="0.2128205128205128" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_result_positive.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_splash.xml" value="0.21331521739130435" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_news.xml" value="0.259375" />
-        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_profile.xml" value="0.259375" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_profile.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_statistics.xml" value="0.259375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/xx.xml" value="0.259375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/menu/bottom_navigation.xml" value="0.23055555555555557" />
