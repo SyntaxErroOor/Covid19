@@ -11,6 +11,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+
+
     }
 }
 rootProject.name = "Covid19 Tracker"

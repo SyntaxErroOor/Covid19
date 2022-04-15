@@ -1,18 +1,25 @@
 package com.example.covid19tracker.Call_Doctor;
 
+import android.graphics.Bitmap;
+
 public class doctor_data {
 
-    private  int image_dactor;
+    private Bitmap image_dactor;
     private String  name_doctor;
     private String Phone_doctor;
+    private String  image_url;
 
-    public doctor_data(int image_dactor, String name_doctor, String phone_doctor) {
-        this.image_dactor = image_dactor;
+    public doctor_data(String image_url, String name_doctor, String phone_doctor) {
+        this.image_url = image_url;
         this.name_doctor = name_doctor;
         this.Phone_doctor = phone_doctor;
     }
 
-    public void setImage_dactor(int image_dactor) {
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public void setImage_dactor(Bitmap image_dactor) {
         this.image_dactor = image_dactor;
     }
 
@@ -24,7 +31,7 @@ public class doctor_data {
         Phone_doctor = phone_doctor;
     }
 
-    public int getImage_dactor() {
+    public Bitmap getImage_dactor() {
         return image_dactor;
     }
 
@@ -32,6 +39,9 @@ public class doctor_data {
         return name_doctor;
     }
 
+    public String getImage_url() {
+        return image_url;
+    }
     public String getPhone_doctor() {
         return Phone_doctor;
     }

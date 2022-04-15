@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.covid19tracker.R;
 
 
@@ -36,7 +38,10 @@ public class doctor_items_adapter extends RecyclerView.Adapter<doctor_items_adap
     @Override
     public void onBindViewHolder(@NonNull doctorViewholder holder, int position) {
 
-        holder.image_doctor.setImageResource(doctor_data_list.get(position).getImage_dactor());
+//        holder.image_doctor.setImageBitmap(doctor_data_list.get(position).getImage_dactor());
+        Glide.with(holder.image_doctor)
+                .load(doctor_data_list.get(position).getImage_url())
+                .into(holder.image_doctor);
         holder.name_doctor_1.setText(doctor_data_list.get(position).getName_doctor());
         holder.phone_doctor_2.setText(doctor_data_list.get(position).getPhone_doctor());
 
