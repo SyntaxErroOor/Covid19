@@ -11,13 +11,13 @@
         android:theme="@style/Theme.Covid19Tracker">
         <activity
             android:name=".result.ResultNegativeActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false"></activity>
+        <activity
+            android:name=".Questions.questions"
+            android:exported="false" />
         <activity
             android:name=".result.ResultPositiveActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Splash.SplashActivity"
             android:exported="true">
@@ -27,6 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Call_Doctor.call_doctor"
+            android:exported="false"/>
+
         <activity
             android:name=".Home.HomeActivity"
             android:exported="false" />

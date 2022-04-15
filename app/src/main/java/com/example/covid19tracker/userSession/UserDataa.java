@@ -29,7 +29,7 @@ public class UserDataa {
         mEditor.apply();
     }
 
-    public HashMap<String, String> getUserData(){
+    public  HashMap<String, String> getUserData(){
         HashMap<String, String> user = new HashMap<>();
         user.put(KEY_EMAIL,mSharedPreferences.getString(KEY_EMAIL,null));
         user.put(KEY_NAME,mSharedPreferences.getString(KEY_NAME,null));

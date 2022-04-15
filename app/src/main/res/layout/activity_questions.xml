@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Questions.questions"
+    android:paddingLeft="26.667dp"
+    android:paddingTop="70dp"
+    android:background="#E9FAFF">
+
+    <TextView
+        android:id="@+id/Question_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/questions_string_frist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="26.667dp"
+        android:fontFamily="@font/cairo"
+        android:textColor="@color/blue_light"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Question_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/qusetion_secand"
+        android:layout_marginTop="10.667dp"
+        app:layout_constraintTop_toBottomOf="@+id/Question_text_1"
+        android:textSize="16dp"
+        android:fontFamily="@font/cairo"
+        android:textColor="@color/gary_dark"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Question_text_2"
+        android:id="@+id/check_buttons">
+
+        <CheckBox
+            android:id="@+id/Question_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/check_box_shape"
+            android:buttonTint="@color/sky_blue_dark"
+            android:text="CheckBox"
+            tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+        <CheckBox
+            android:id="@+id/Question_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:buttonTint="@color/sky_blue_dark"
+            android:background="@drawable/check_box_shape"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp"
+             />
+
+        <CheckBox
+            android:id="@+id/Question_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:buttonTint="@color/sky_blue_dark"
+            android:background="@drawable/check_box_shape"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp"/>
+
+        <CheckBox
+            android:id="@+id/Question_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:buttonTint="@color/sky_blue_dark"
+
+            android:background="@drawable/check_box_shape"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp" />
+
+        <CheckBox
+            android:id="@+id/Question_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:buttonTint="@color/sky_blue_dark"
+
+            android:background="@drawable/check_box_shape"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp" />
+
+        <CheckBox
+            android:id="@+id/Question_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:buttonTint="@color/sky_blue_dark"
+
+            android:background="@drawable/check_box_shape"
+            android:layout_marginRight="26.667dp"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/function_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="15dp"
+
+        app:layout_constraintTop_toBottomOf="@id/check_buttons">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="65dp"
+            android:text="Back"
+            android:textSize="26dp"
+            android:paddingTop="1dp"
+            android:textAlignment="center"
+            android:textColor="@color/sky_blue_dark"
+            android:background="@drawable/button_back"
+
+
+            />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="95dp"
+            android:text="Next"
+            android:textSize="26dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:paddingTop="1dp"
+            android:background="@drawable/button_submit"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/Questions_activtiy_progressbar"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/function_buttons"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        app:srcCompat="@drawable/progressbar_1of3" />
+
+    <TextView
+        android:id="@+id/anwsers_text_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 of 3 answered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Questions_activtiy_progressbar"
+        android:layout_marginTop="15dp"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_call_doctor"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="100dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/src_image_call_doctor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/doctor1"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/image_call_doctor"
+            android:fontFamily="@font/cairo"
+            android:text="@string/name_doctor"
+            android:textColor="@color/blue_light"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            >
+
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctor_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/image_call_doctor"
+            android:fontFamily="@font/cairo"
+            android:text="@string/phone_doctor"
+            android:textColor="@color/blue_light"
+            android:textSize="14dp"
+            android:textStyle="normal"
+            android:id="@+id/phone_doctor">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

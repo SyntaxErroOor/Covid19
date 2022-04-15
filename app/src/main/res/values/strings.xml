@@ -48,4 +48,11 @@
     <string name="symptoms_of_last_check">Symptoms of last check:</string>
     <string name="symptoms_1_symptoms_2">Symptoms 1, Symptoms 2</string>
     <string name="log_out">Log Out</string>
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="call_doctor">Call Doctor</string>
+    <string name="name_doctor">DR.Ahmed Elsayed</string>
+    <string name="phone_doctor">+2012345678</string>
+    <string name="questions_string_frist">Select all the symptoms \nyou currently have in this list</string>
+    <string name="qusetion_secand"> You can also select more than one symptom or tick the \«No \nsymptom\» field.  \n At least one field must be selected. </string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.covid19tracker.Fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,7 +16,11 @@ import android.widget.TextView;
 import com.example.covid19tracker.API.ApiInterface;
 import com.example.covid19tracker.API.StatisticsResponse;
 import com.example.covid19tracker.API.WebSreviceClient;
+import com.example.covid19tracker.Home.HomeActivity;
+import com.example.covid19tracker.Questions.Question;
+import com.example.covid19tracker.Questions.questions;
 import com.example.covid19tracker.R;
+import com.example.covid19tracker.Splash.SplashActivity;
 import com.example.covid19tracker.userSession.UserDataa;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -109,6 +115,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //                getActivity().getSupportFragmentManager()
 //                        .beginTransaction().replace(R.id.fragment_container,
 //                        new NewsFragment()).commit();
+
+               startActivity(new Intent(getActivity().getApplicationContext(), questions.class));
+
+               /*Intent i = new Intent(getActivity(), questions.class);
+                startActivity(i);
+                ((HomeActivity) getActivity()).overridePendingTransition(0, 0);
+*/
+
+
+
+
                 break;
         }
 
