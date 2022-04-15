@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.covid19tracker.Call_Doctor.call_doctor;
+import com.example.covid19tracker.Home.HomeActivity;
 import com.example.covid19tracker.R;
 
 public class ResultPositiveActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,25 +22,22 @@ public class ResultPositiveActivity extends AppCompatActivity implements View.On
     }
 
     private void intialization() {
-        homeBtn=findViewById(R.id.home_btn);
+        homeBtn = findViewById(R.id.home_btn);
         homeBtn.setOnClickListener(this);
-        callDoctorBtn=findViewById(R.id.call_doctor_btn);
+        callDoctorBtn = findViewById(R.id.call_doctor_btn);
         callDoctorBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.home_btn:
                 //return to home
+                startActivity(new Intent(this, HomeActivity.class));
                 break;
             case R.id.call_doctor_btn:
                 //navigate to call doctor
-
                 startActivity(new Intent(ResultPositiveActivity.this, call_doctor.class));
-
-
-
                 break;
         }
 

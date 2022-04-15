@@ -34,6 +34,8 @@ public class ResultNegativeActivity extends AppCompatActivity implements View.On
         switch (view.getId()){
             case R.id.home_btn:
                 //return to home
+                startActivity(new Intent(this, HomeActivity.class));
+
                 break;
             case R.id.call_doctor_btn:
                 //navigate to call doctor

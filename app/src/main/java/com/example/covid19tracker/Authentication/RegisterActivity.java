@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.covid19tracker.Home.HomeActivity;
@@ -30,6 +31,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private TextView tvLogIn;
     private FirebaseAuth mAuth;
     UserDataa mUserDataa;
     private FloatingActionButton btnRegister;
@@ -56,6 +58,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         radioGroup=findViewById(R.id.radio_group);
         Pb = findViewById(R.id.pb);
         mUserDataa=new UserDataa(RegisterActivity.this);
+        tvLogIn=findViewById(R.id.tv_login);
+        tvLogIn.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +67,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.btn_register:
                 registerUser();
+                break;
+            case R.id.tv_login:
+                startActivity(new Intent(this,LoginActivity.class));
                 break;
         }
 
@@ -102,6 +109,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+        if(!Patterns.PHONE.matcher(phone).matches()){
+            edtPhone.setError("Please Enter a Valid Number");
+            edtPhone.requestFocus();
+            return;
+        }
+
+        if(phone.length()<11){
+            edtPhone.setError("Please Enter a Valid Number");
+            edtPhone.requestFocus();
+            return;
+        }
         if (password.isEmpty()) {
             edtPassword.setError("Password Is Required");
             edtPassword.requestFocus();
@@ -116,6 +134,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         if (age.isEmpty()) {
             edtAge.setError("Age Is Required");
+            edtAge.requestFocus();
+            return;
+        }
+
+        if (age.length()>=3) {
+            edtAge.setError("Please Enter A Valid Age");
             edtAge.requestFocus();
             return;
         }

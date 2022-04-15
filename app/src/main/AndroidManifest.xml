@@ -34,9 +34,6 @@
             android:name=".Home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Authentication.ForgetPasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".Authentication.RegisterActivity"
             android:exported="false" />
         <activity
