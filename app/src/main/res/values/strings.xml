@@ -54,5 +54,9 @@
     <string name="name_doctor">DR.Ahmed Elsayed</string>
     <string name="phone_doctor">+2012345678</string>
     <string name="questions_string_frist">Select all the symptoms \nyou currently have in this list</string>
-    <string name="qusetion_secand"> You can also select more than one symptom or tick the \«No \nsymptom\» field.  \n At least one field must be selected. </string>
+    <string name="you_can_select">You can also select more than one symptom or tick the «No symptom» field.\nAt least one field must be selected.</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="_1_of_3_answered">1 of 3 answered</string>
 </resources>

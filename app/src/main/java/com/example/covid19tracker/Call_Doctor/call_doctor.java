@@ -27,7 +27,7 @@ public class call_doctor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        image_handler=new Handler();
+        image_handler = new Handler();
         setContentView(R.layout.activity_call_doctor);
 
         inidata();
@@ -38,17 +38,14 @@ public class call_doctor extends AppCompatActivity {
 
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
-
-
 
 
     }
 
     private void iniRecylerview() {
-        recyclerView=(RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -67,26 +64,23 @@ public class call_doctor extends AppCompatActivity {
         doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
 
     }
-class fetchimage extends Thread
-{
-    private String URL;
-    InputStream inputStream=null;
-    Bitmap bitmap;
-    fetchimage(String URL){
-        this.URL=URL;
-    }
 
-
-
-
-    @Override
-    public void run() {
-
-
-
-
-    }
-}
+//    class fetchimage extends Thread {
+//        private String URL;
+//        InputStream inputStream = null;
+//        Bitmap bitmap;
+//
+//        fetchimage(String URL) {
+//            this.URL = URL;
+//        }
+//
+//
+//        @Override
+//        public void run() {
+//
+//
+//        }
+//    }
 
 
 }
