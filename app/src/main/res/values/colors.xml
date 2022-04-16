@@ -11,4 +11,5 @@
     <color name="gary_dark">#959595</color>
     <color name="sky_blue">#E9FAFF</color>
     <color name="sky_blue_dark">#2B9ABB</color>
+    <color name="tfe_semi_transparent">#66000000</color>
 </resources>

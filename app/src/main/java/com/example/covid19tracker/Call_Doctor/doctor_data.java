@@ -15,6 +15,12 @@ public class doctor_data {
         this.Phone_doctor = phone_doctor;
     }
 
+    void change_data(String text)
+    {
+      Phone_doctor=text;
+
+    }
+
     public void setImage_url(String image_url) {
         this.image_url = image_url;
     }

@@ -255,9 +255,12 @@ public class questions extends AppCompatActivity {
                                 updated_data_account.put("symtoms_of_last_check",saved_diseaes.toString());
                                 updated_data_account.put("result_of_last_check","Negative");
                                 updated_data_account.put("date_of_last_check",DateFormat.format("MMMM d, yyyy ", date.getTime()));
-                              firestore_useraccount.collection("users").document(useraccount.get("user_id")).update(updated_data_account);
-
-
+                                try {
+                                    firestore_useraccount.collection("users").document(useraccount.get("user_id")).update(updated_data_account);
+                                }catch (Exception e)
+                                {
+                                    Toast.makeText(getApplicationContext(),"Your Data Doesn't Uploaded check your internet",Toast.LENGTH_LONG);
+                                }
                                 startActivity(new Intent(questions.this, ResultNegativeActivity.class));
                             }
                             else{
@@ -265,8 +268,12 @@ public class questions extends AppCompatActivity {
                                 updated_data_account.put("symtoms_of_last_check",saved_diseaes.toString());
                                 updated_data_account.put("result_of_last_check","Positive");
                                 updated_data_account.put("date_of_last_check",DateFormat.format("MMMM d, yyyy ", date.getTime()));
-                                firestore_useraccount.collection("users").document(useraccount.get("user_id")).update(updated_data_account);
-
+                                try {
+                                    firestore_useraccount.collection("users").document(useraccount.get("user_id")).update(updated_data_account);
+                                }catch (Exception e)
+                                {
+                                    Toast.makeText(getApplicationContext(),"Your Data Doesn't Uploaded check your internet",Toast.LENGTH_LONG);
+                                }
 
                                 startActivity(new Intent(questions.this, ResultPositiveActivity.class));
 

@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -71,6 +73,20 @@ public class call_doctor extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         adpter = new doctor_items_adapter(doctor_data);
         recyclerView.setAdapter(adpter);
+        adpter.setOnItemClickListener(new doctor_items_adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int poisition) {
+
+                Uri uri=Uri.parse("tel:"+doctor_data.get(poisition).getPhone_doctor());
+                Intent intent=new Intent();
+                intent.setAction(Intent.ACTION_DIAL);
+                intent.setData(uri);
+                startActivity(intent);
+
+
+            }
+        });
+
 
     }
 

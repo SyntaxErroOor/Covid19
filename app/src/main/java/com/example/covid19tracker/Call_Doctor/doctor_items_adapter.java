@@ -20,10 +20,28 @@ public class doctor_items_adapter extends RecyclerView.Adapter<doctor_items_adap
 
    private ArrayList<doctor_data> doctor_data_list;
 
+   private OnItemClickListener mLitener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int poisition);
+
+    }
+
+
+
+
+
+
+  public   void setOnItemClickListener(OnItemClickListener listener)
+  {
+      mLitener=listener;
+  }
+
+
     @NonNull
     @Override
     public doctorViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new doctorViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.docoter_item,parent,false));
+        return new doctorViewholder(LayoutInflater.from(parent.getContext()).inflate(R.layout.docoter_item,parent,false),mLitener);
     }
 
 
@@ -60,11 +78,26 @@ public class doctor_items_adapter extends RecyclerView.Adapter<doctor_items_adap
         private TextView name_doctor_1;
         private TextView   phone_doctor_2;
 
-        public doctorViewholder(@NonNull View itemView) {
+        public doctorViewholder(@NonNull View itemView,final OnItemClickListener listener) {
             super(itemView);
             image_doctor=itemView.findViewById(R.id.src_image_call_doctor);
             name_doctor_1=itemView.findViewById(R.id.doctor_name);
             phone_doctor_2=itemView.findViewById(R.id.phone_doctor);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                 if(listener!=null)
+                 {
+                     int poisiton=getAdapterPosition();
+                     if(poisiton!=RecyclerView.NO_POSITION)
+                     {
+                         listener.onItemClick(poisiton);
+                     }
+
+                 }
+
+                }
+            });
 
         }
     }

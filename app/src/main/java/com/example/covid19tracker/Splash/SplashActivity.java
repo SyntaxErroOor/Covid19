@@ -11,6 +11,7 @@ import com.example.covid19tracker.Authentication.LoginActivity;
 import com.example.covid19tracker.Home.HomeActivity;
 import com.example.covid19tracker.R;
 import com.example.covid19tracker.userSession.UserDataa;
+import com.example.covid19tracker.DetectorActivity;
 
 public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,10 +35,12 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_start:
-                if (mUserDataa.isLogin())
-                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                else
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                if (mUserDataa.isLogin())
+//                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+//                else
+//                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, DetectorActivity.class));
+//
                 break;
         }
     }
