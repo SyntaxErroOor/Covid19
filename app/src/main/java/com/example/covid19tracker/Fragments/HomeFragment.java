@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.covid19tracker.API.ApiInterface;
 import com.example.covid19tracker.API.StatisticsResponse;
@@ -40,7 +41,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextView btnCheckup;
     UserDataa mDataa;
     PieChart mPieChart;
-    WebSreviceClient mretrofit;
 
     public HomeFragment() {
 
@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mNav = getActivity().findViewById(R.id.bottom_navigation);
         mPieChart = view.findViewById(R.id.pie_chart);
         callApi();
-
     }
 
     private void callApi() {
@@ -82,26 +81,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     int cases = Integer.parseInt(response.body().getTodayCases());
                     int recovered = Integer.parseInt(response.body().getTodayRecovered());
                     int deaths = Integer.parseInt(response.body().getTodayDeaths());
-//                    int totalToday=cases+recovered+deaths;
-//                    Log.d("TAG", totalToday+"");
-                    updatePieChart(cases,recovered,deaths);
+                    updatePieChart(cases, recovered, deaths);
                 }
             }
 
             @Override
             public void onFailure(Call<StatisticsResponse> call, Throwable t) {
-                    Log.d("onFaliure", t.toString());
+                Toast.makeText(getContext(), "Please Check your Connection", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void updatePieChart(int cases, int recovered, int deaths) {
         mPieChart.clearChart();
-//        int totalToday=cases+recovered+deaths;
-//        mPieChart.addPieSlice(new PieModel("Total",totalToday,Color.parseColor("#FFB701")));
-        mPieChart.addPieSlice(new PieModel("Cases",cases,Color.parseColor("#FF4CAF50")));
-        mPieChart.addPieSlice(new PieModel("Recoverd",recovered,Color.parseColor("#38ACCD")));
-        mPieChart.addPieSlice(new PieModel("Deaths",deaths,Color.parseColor("#F55C47")));
+        mPieChart.addPieSlice(new PieModel("Cases", cases, Color.parseColor("#FF4CAF50")));
+        mPieChart.addPieSlice(new PieModel("Recovered", recovered, Color.parseColor("#38ACCD")));
+        mPieChart.addPieSlice(new PieModel("Deaths", deaths, Color.parseColor("#F55C47")));
         mPieChart.startAnimation();
     }
 
@@ -109,23 +104,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-//            case R.id.btn_show:
-//                break;
             case R.id.btn_checkup:
-//                getActivity().getSupportFragmentManager()
-//                        .beginTransaction().replace(R.id.fragment_container,
-//                        new NewsFragment()).commit();
-
-               startActivity(new Intent(getActivity().getApplicationContext(), questions.class));
-
-               /*Intent i = new Intent(getActivity(), questions.class);
-                startActivity(i);
-                ((HomeActivity) getActivity()).overridePendingTransition(0, 0);
-*/
-
-
-
-
+                startActivity(new Intent(getContext(), questions.class));
                 break;
         }
 

@@ -32,8 +32,11 @@ public class ResultPositiveActivity extends AppCompatActivity implements View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.home_btn:
-                //return to home
-                startActivity(new Intent(this, HomeActivity.class));
+                Intent i = new Intent(this, HomeActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
                 break;
             case R.id.call_doctor_btn:
                 //navigate to call doctor

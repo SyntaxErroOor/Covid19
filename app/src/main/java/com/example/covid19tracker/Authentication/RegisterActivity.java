@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth mAuth;
     UserDataa mUserDataa;
     private FloatingActionButton btnRegister;
-    private EditText edtFullName, edtEmail, edtPhone,  edtPassword,edtAge;
+    private EditText edtFullName, edtEmail, edtPhone, edtPassword, edtAge;
     private FrameLayout Pb;
     private RadioGroup radioGroup;
 
@@ -53,12 +53,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         edtFullName = findViewById(R.id.ed_fullname);
         edtAge = findViewById(R.id.ed_age);
         edtEmail = findViewById(R.id.ed_email);
-        edtPhone=findViewById(R.id.ed_phone);
+        edtPhone = findViewById(R.id.ed_phone);
         edtPassword = findViewById(R.id.ed_password);
-        radioGroup=findViewById(R.id.radio_group);
+        radioGroup = findViewById(R.id.radio_group);
         Pb = findViewById(R.id.pb);
-        mUserDataa=new UserDataa(RegisterActivity.this);
-        tvLogIn=findViewById(R.id.tv_login);
+        mUserDataa = new UserDataa(RegisterActivity.this);
+        tvLogIn = findViewById(R.id.tv_login);
         tvLogIn.setOnClickListener(this);
     }
 
@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 registerUser();
                 break;
             case R.id.tv_login:
-                Intent i=new Intent(this, LoginActivity.class);
+                Intent i = new Intent(this, LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String email = edtEmail.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
         String phone = edtPhone.getText().toString().trim();
-        String gender="";
+        String gender = "";
         int checkedID = radioGroup.getCheckedRadioButtonId();
 
         if (fullName.isEmpty()) {
@@ -112,13 +112,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if(!Patterns.PHONE.matcher(phone).matches()){
+        if (!Patterns.PHONE.matcher(phone).matches()) {
             edtPhone.setError("Please Enter a Valid Number");
             edtPhone.requestFocus();
             return;
         }
 
-        if(phone.length()<11){
+        if (phone.length() < 11) {
             edtPhone.setError("Please Enter a Valid Number");
             edtPhone.requestFocus();
             return;
@@ -141,24 +141,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if (age.length()>=3) {
+        if (age.length() >= 3) {
             edtAge.setError("Please Enter A Valid Age");
             edtAge.requestFocus();
             return;
         }
 
-        if(checkedID==-1){
+        if (checkedID == -1) {
             Toast.makeText(this, "please select your gender", Toast.LENGTH_LONG).show();
             return;
         }
-        switch (checkedID){
+        switch (checkedID) {
             case R.id.radio_male:
-                gender="Male";
+                gender = "Male";
                 break;
             case R.id.radio_female:
-                gender="Female";
+                gender = "Female";
                 break;
         }
+
         Pb.setVisibility(View.VISIBLE);
         String finalGender = gender;
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -170,7 +171,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         Map<String, String> user = new HashMap<>();
                         user.put("fullName", fullName);
                         user.put("email", email);
-                        user.put("phone",phone);
+                        user.put("phone", phone);
                         user.put("age", age);
                         user.put("gender", finalGender);
                         user.put("date_of_last_check", "Go Check!");
@@ -182,24 +183,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
-                                        Toast.makeText(RegisterActivity.this, "created successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
                                         Pb.setVisibility(View.GONE);
                                         //save data to sharedPreferences
-                                        mUserDataa.saveData(email,fullName,userID,true);
+                                        mUserDataa.saveData(email, fullName, userID, true);
                                         // here redirect but later
-                                        Intent i=new Intent(RegisterActivity.this, HomeActivity.class);
+                                        Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
                                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(i);
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.d("on failure 2 ", e.toString());
-                                        Toast.makeText(RegisterActivity.this, e.toString(), Toast.LENGTH_LONG).show();
-
                                     }
                                 });
                     }
@@ -207,12 +200,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
-
                         // cant register
-                        Toast.makeText(RegisterActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         Pb.setVisibility(View.GONE);
-                        Log.d("on failure 1 ", e.toString());
+                        Toast.makeText(RegisterActivity.this, "Something went wrong please try again later", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

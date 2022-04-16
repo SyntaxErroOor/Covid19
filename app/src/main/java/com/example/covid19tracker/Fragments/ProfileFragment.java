@@ -73,8 +73,8 @@ public class ProfileFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "SomeThing wrong Please Try Again Later", Toast.LENGTH_SHORT).show();
                         pb.setVisibility(View.GONE);
+                        Toast.makeText(getContext(), "SomeThing wrong Please Try Again Later", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

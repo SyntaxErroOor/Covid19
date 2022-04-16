@@ -28,10 +28,13 @@
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_result_negative.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_result_positive.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/activity_splash.xml" value="0.21331521739130435" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/docoter_item.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_home.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_news.xml" value="0.259375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_profile.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/fragment_statistics.xml" value="0.259375" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/tfe_od_activity_camera.xml" value="0.2128205128205128" />
+        <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/tfe_od_camera_connection_fragment_tracking.xml" value="0.2128205128205128" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/layout/xx.xml" value="0.259375" />
         <entry key="..\:/college/projects/Android/2022/Covid19Tracker/app/src/main/res/menu/bottom_navigation.xml" value="0.23055555555555557" />
         <entry key="..\:/projects/final prooooooo/Covid19/app/src/main/res/drawable-v24/bottom_sheet_bg.xml" value="0.197" />
@@ -50,15 +53,6 @@
         <entry key="..\:/projects/final prooooooo/Covid19/app/src/main/res/layout/fragment_news.xml" value="0.371875" />
         <entry key="..\:/projects/final prooooooo/Covid19/app/src/main/res/layout/fragment_profile.xml" value="0.371875" />
         <entry key="..\:/projects/final prooooooo/Covid19/app/src/main/res/layout/recycleview_ui.xml" value="0.19166666666666668" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable-v24/ic_baseline_add.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable-v24/ic_baseline_remove.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable-v24/ic_baseline_switch_camera_24.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable/home_screen_retangle_for_buttons.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/layout/tfe_od_activity_camera.xml" value="0.25" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/layout/tfe_od_camera_connection_fragment_tracking.xml" value="0.19166666666666668" />
-        <entry key="..\:/projects/this is the final/Covid19/app/src/main/res/layout/tfe_od_layout_bottom_sheet.xml" value="0.19166666666666668" />
       </map>
     </option>
   </component>

@@ -64,9 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_login:
                 userLogin();
                 break;
-
         }
-
     }
 
     private void userLogin() {
@@ -111,22 +109,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         if(documentSnapshot.exists()){
                                             //hold data into shared preferences
                                             mUserDataa.saveData(documentSnapshot.getString("email"),documentSnapshot.getString("fullName"),userID,true);
-                                            Log.d("TAG", documentSnapshot.getString("fullName"));
-                                        }else{
-                                            Log.d("TAG", "DOcument doesnt exist");
                                         }
-
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.d("TAG", e.toString());
                                     }
                                 });
                         pb.setVisibility(View.GONE);
-                        Toast.makeText(LoginActivity.this, "Logged", Toast.LENGTH_SHORT).show();
-                        //redirect
+                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
+                        //redirect to home activity
                         Intent i=new Intent(LoginActivity.this, HomeActivity.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -138,9 +126,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         pb.setVisibility(View.GONE);
-                        Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Invalid Email Or Password", Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
 }

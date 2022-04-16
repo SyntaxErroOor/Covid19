@@ -37,8 +37,6 @@ public class call_doctor extends AppCompatActivity {
     doctor_items_adapter adpter;
     FirebaseFirestore firestore_data;
     Handler image_handler;
-    Thread image_download;
-    Runnable runnable;
     ProgressDialog progressDialog;
 
 
@@ -46,25 +44,16 @@ public class call_doctor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         image_handler = new Handler();
-        firestore_data=FirebaseFirestore.getInstance();
-        progressDialog=new ProgressDialog(this);
+        firestore_data = FirebaseFirestore.getInstance();
+        progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage(" Getting Doctors Data...");
         progressDialog.show();
         setContentView(R.layout.activity_call_doctor);
         inidata();
         iniRecylerview();
-
-
     }
 
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-
-    }
 
     private void iniRecylerview() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -76,142 +65,35 @@ public class call_doctor extends AppCompatActivity {
         adpter.setOnItemClickListener(new doctor_items_adapter.OnItemClickListener() {
             @Override
             public void onItemClick(int poisition) {
-
-                Uri uri=Uri.parse("tel:"+doctor_data.get(poisition).getPhone_doctor());
-                Intent intent=new Intent();
+                Uri uri = Uri.parse("tel:" + doctor_data.get(poisition).getPhone_doctor());
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_DIAL);
                 intent.setData(uri);
                 startActivity(intent);
-
-
             }
         });
-
-
     }
 
     private void inidata() {
         doctor_data = new ArrayList<>();
-//       doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
-//        doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
-//    doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
-//     doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
-//       doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
-//        doctor_data.add(new doctor_data(R.drawable.doctor1, "Ahmed NAfea", "+0111113332"));
+        firestore_data.collection("doctors").get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
 
-
-
-           firestore_data.collection("doctors").get(). addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-               @Override
-               public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                   if(task.isSuccessful())
-                   {
-                       Runnable runnable;
-                         Thread thread= new Thread();
-                        Bitmap[] bitmapa = new Bitmap[1];
-
-                       for(QueryDocumentSnapshot decument : task.getResult())
-                       {
-                           Map data_firestore = decument.getData();
-
-//                           fetchimage image=new fetchimage(data_firestore.get("Url").toString());
-//                           image.run();
-
-//                           runnable=new Runnable() {
-//                               @Override
-//                               public void run() {
-//                                 bitmapa[0] = get_image(data_firestore.get("Url").toString());
-//
-//
-//                               }
-//                           };
-//                           thread=new Thread(runnable);
-//                           thread.start();
-
-
-                           doctor_data.add(new doctor_data(data_firestore.get("Url").toString(), decument.getData().get("Name").toString(),data_firestore.get("Phone").toString() ));
-
-                       }
-                       adpter.notifyDataSetChanged();
-                      if(progressDialog.isShowing())
-                          progressDialog.dismiss();
-
-
-
-
-                   }else 
-                   {
-
-                       Log.i(TAG, "onComplete: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                   }
-
-
-
-               }
-           });
-
-
-
-
-
-
-
+                            for (QueryDocumentSnapshot decument : task.getResult()) {
+                                Map data_firestore = decument.getData();
+                                doctor_data.add(new doctor_data(
+                                        data_firestore.get("Url").toString(),
+                                        decument.getData().get("Name").toString(),
+                                        data_firestore.get("Phone").toString()));
+                            }
+                            adpter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        } else
+                            Toast.makeText(call_doctor.this, "Please Check Your Connection", Toast.LENGTH_LONG).show();
+                    }
+                });
     }
-
-
-
-
-    private Bitmap get_image(String URL) {
-
-        Bitmap bitmap=null;
-        try {
-            InputStream inputStream=new java.net.URL(URL).openStream();
-            bitmap= BitmapFactory.decodeStream(inputStream);
-        } catch (IOException e) {
-            Log.i(TAG, "run: aaaaaaaaaa");
-            e.printStackTrace();
-        }
-
-     return bitmap;
-
-    }
-
-
-    class fetchimage extends Thread {
-        private String URL;
-        InputStream inputStream = null;
-        private Bitmap bitmap=null;
-
-
-
-        fetchimage(String URL) {
-            this.URL = URL;
-        }
-
-
-        @Override
-        public void run() {
-
-
-            try {
-                inputStream=new java.net.URL(URL).openStream();
-                bitmap= BitmapFactory.decodeStream(inputStream);
-            } catch (IOException e) {
-                Log.i(TAG, "run: aaaaaaaaaa");
-                e.printStackTrace();
-               }
-
-
-
-        }
-
-        public Bitmap getBitmap() {
-            return bitmap;
-        }
-    }
-
-
-
-
-
 }
