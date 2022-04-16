@@ -95,9 +95,8 @@ public class ProfileFragment extends Fragment {
         tvLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDataa.deleteSavedData();
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getContext(), LoginActivity.class));
+                mDataa.deleteSavedData();
             }
         });
     }

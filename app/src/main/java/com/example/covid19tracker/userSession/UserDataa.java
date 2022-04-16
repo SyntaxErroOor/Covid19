@@ -1,7 +1,11 @@
 package com.example.covid19tracker.userSession;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+
+import com.example.covid19tracker.Authentication.LoginActivity;
+import com.example.covid19tracker.Splash.SplashActivity;
 
 import java.util.HashMap;
 
@@ -43,7 +47,12 @@ public class UserDataa {
 
     public void deleteSavedData(){
         mEditor.clear();
-        mEditor.apply();
+        mEditor.commit();
+        Intent i=new Intent(context, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
     public boolean isLogin(){
         return mSharedPreferences.getBoolean(KEY_STATUS,false);

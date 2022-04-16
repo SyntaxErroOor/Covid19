@@ -69,14 +69,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 registerUser();
                 break;
             case R.id.tv_login:
-                startActivity(new Intent(this,LoginActivity.class));
+                Intent i=new Intent(this, LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
                 break;
         }
 
     }
 
     private void registerUser() {
-        Log.d("يارب تشتغل", "registerUser: ");
         String fullName = edtFullName.getText().toString().trim();
         String age = edtAge.getText().toString().trim();
         String email = edtEmail.getText().toString().trim();
@@ -184,7 +187,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         //save data to sharedPreferences
                                         mUserDataa.saveData(email,fullName,userID,true);
                                         // here redirect but later
-                                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                                        Intent i=new Intent(RegisterActivity.this, HomeActivity.class);
+                                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(i);
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
