@@ -155,6 +155,7 @@ public class LegacyCameraConnectionFragment extends Fragment {
     super.onActivityCreated(savedInstanceState);
   }
 
+
   @Override
   public void onResume() {
     super.onResume();
@@ -164,11 +165,13 @@ public class LegacyCameraConnectionFragment extends Fragment {
     // a camera and start preview from here (otherwise, we wait until the surface is ready in
     // the SurfaceTextureListener).
 
-    if (textureView.isAvailable()) {
-      camera.startPreview();
-    } else {
-      textureView.setSurfaceTextureListener(surfaceTextureListener);
-    }
+    textureView.setSurfaceTextureListener(surfaceTextureListener);
+
+//    if (textureView.isAvailable()) {
+//      camera.startPreview();
+//    } else {
+//      textureView.setSurfaceTextureListener(surfaceTextureListener);
+//    }
   }
 
   @Override
