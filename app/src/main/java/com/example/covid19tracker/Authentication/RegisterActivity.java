@@ -22,8 +22,10 @@ import com.example.covid19tracker.userSession.UserDataa;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -106,6 +108,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             edtEmail.requestFocus();
             return;
         }
+
         if (phone.isEmpty()) {
             edtPhone.setError("Phone Is Required");
             edtPhone.requestFocus();
@@ -161,12 +164,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
         Pb.setVisibility(View.VISIBLE);
+
         String finalGender = gender;
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        //start get data and send it to firestore Key and Value
                         String userID = FirebaseAuth.getInstance().getUid();
                         Map<String, String> user = new HashMap<>();
                         user.put("fullName", fullName);
@@ -177,7 +181,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         user.put("date_of_last_check", "Go Check!");
                         user.put("result_of_last_check", "Go Check!");
                         user.put("symtoms_of_last_check", "Go Check!");
-
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
                         db.collection("users").document(userID).set(user)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -185,9 +188,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     public void onSuccess(Void unused) {
                                         Toast.makeText(RegisterActivity.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
                                         Pb.setVisibility(View.GONE);
-                                        //save data to sharedPreferences
                                         mUserDataa.saveData(email, fullName, userID, true);
-                                        // here redirect but later
                                         Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
                                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -202,8 +203,30 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onFailure(@NonNull Exception e) {
                         // cant register
                         Pb.setVisibility(View.GONE);
-                        Toast.makeText(RegisterActivity.this, "Something went wrong please try again later", Toast.LENGTH_SHORT).show();
+                        if (e instanceof FirebaseNetworkException) {
+                            Toast.makeText(RegisterActivity.this, "Check Your internet Connection", Toast.LENGTH_SHORT).show();
+                        } else {
+                            String errorCode = ((FirebaseAuthException) e).getErrorCode();
+                            String error = getErrorMessage(errorCode);
+                            Toast.makeText(RegisterActivity.this, error, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
+    }
+
+    private String getErrorMessage(String errorCode) {
+        switch (errorCode) {
+            case "ERROR_INVALID_EMAIL":
+            case "ERROR_USER_NOT_FOUND":
+            case "ERROR_WRONG_PASSWORD":
+                return "Invalid Email Or Password";
+
+            case "ERROR_EMAIL_ALREADY_IN_USE":
+            case "ERROR_CREDENTIAL_ALREADY_IN_USE":
+                return "this Email Is Already Used";
+            default:
+                return "Something went wrong, Please try again Later";
+
+        }
     }
 }

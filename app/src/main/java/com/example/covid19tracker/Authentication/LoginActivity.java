@@ -10,7 +10,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,10 +19,14 @@ import com.example.covid19tracker.userSession.UserDataa;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.net.SocketException;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -126,8 +129,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         pb.setVisibility(View.GONE);
-                        Toast.makeText(LoginActivity.this, "Invalid Email Or Password", Toast.LENGTH_SHORT).show();
+                        if(e instanceof FirebaseNetworkException){
+                            Toast.makeText(LoginActivity.this, "Check Your internet Connection", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            String errorCode = ((FirebaseAuthException) e).getErrorCode();
+                            String error= getErrorMessage(errorCode);
+                            Toast.makeText(LoginActivity.this, error, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
+    }
+
+    private String getErrorMessage(String errorCode) {
+        switch (errorCode) {
+            case "ERROR_INVALID_EMAIL":
+            case "ERROR_USER_NOT_FOUND":
+            case "ERROR_WRONG_PASSWORD":
+                return "Invalid Email Or Password";
+
+            case "ERROR_EMAIL_ALREADY_IN_USE":
+            case "ERROR_CREDENTIAL_ALREADY_IN_USE":
+                return "this Email Is Already Used";
+            default:
+                return "Something went wrong, Please try again Later";
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Covid19Tracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Covid19Tracker" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">#167E9D</item>

@@ -29,6 +29,8 @@ import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
 
+import java.net.SocketException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -87,7 +89,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFailure(Call<StatisticsResponse> call, Throwable t) {
-                Toast.makeText(getContext(), "Please Check your Connection", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Something Went wrong, Please try again later", Toast.LENGTH_SHORT).show();
             }
         });
     }

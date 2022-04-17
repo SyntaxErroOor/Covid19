@@ -48,7 +48,8 @@ public class SplashActivity extends AppCompatActivity {
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                 } else
-                    Toast.makeText(getApplicationContext(), "Please Connect To A Network", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Please Connect To A Network",
+                            Toast.LENGTH_LONG).show();
             }
         });
         mUserDataa = new UserDataa(SplashActivity.this);
