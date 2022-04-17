@@ -79,9 +79,9 @@ public class questions extends AppCompatActivity {
 
         ///////////////////////////////////////////////////////////////////////////////////////////////
         /*         intialize Questions by class Question           */
-        Question Q1 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Breathing Problem", 1), new Answer("Fever", 2), new Answer("Dry Cough", 3), new Answer("Running Nose", 4), new Answer("Asthma", 5));
-        Question Q2 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Chronic Lung Disease", 1), new Answer("Headache", 2), new Answer("Heart Disease", 3), new Answer("Diabetes", 4), new Answer("Gastrointestinal problem", 5));
-        Question Q3 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Are you committed to wearing masks", 1), new Answer("Do you regularly use hand sanitizer", 2));
+        Question Q1 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Breathing Problem", 4), new Answer("Fever", 1), new Answer("Dry Cough", 4), new Answer("Running Nose", 0), new Answer("Asthma", 0));
+        Question Q2 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Chronic Lung Disease", 1), new Answer("Headache", 2), new Answer("Heart Disease", 1), new Answer("Diabetes", 1), new Answer("Gastrointestinal problem", 3));
+        Question Q3 = new Question(new Answer("No symptom (from the below)", 0), new Answer("Are you committed to wearing masks", 0), new Answer("Do you regularly use hand sanitizer", 0));
 
         CheckBox Answer1, Answer2, Answer3, Answer4, Answer5, Answer6;
         Answer1 = findViewById(R.id.Question_1);
@@ -211,7 +211,7 @@ public class questions extends AppCompatActivity {
                             //submit_button.setVisibility(View.INVISIBLE);
                             // Toast.makeText(questions.this,number_check_answer+" ", Toast.LENGTH_SHORT).show();
                             // //Toast.makeText(questions.this, "your befor   "+Score + " ", Toast.LENGTH_SHORT).show();
-                            if (Score < 10) {
+                            if (Score < 8) {
                                 updated_data_account.put("symtoms_of_last_check", saved_diseaes.toString());
                                 updated_data_account.put("result_of_last_check", "Negative");
                                 updated_data_account.put("date_of_last_check", DateFormat.format("MMMM d, yyyy ", date.getTime()));
