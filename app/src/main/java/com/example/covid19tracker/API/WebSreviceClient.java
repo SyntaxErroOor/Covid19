@@ -7,7 +7,6 @@ public class WebSreviceClient {
 
     private static Retrofit retrofit = null;
     public static final String BASE_URL = "https://disease.sh/";
-
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
@@ -15,8 +14,6 @@ public class WebSreviceClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-
-
         return retrofit;
     }
 }

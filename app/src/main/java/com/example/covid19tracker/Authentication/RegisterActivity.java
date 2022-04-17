@@ -220,13 +220,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case "ERROR_USER_NOT_FOUND":
             case "ERROR_WRONG_PASSWORD":
                 return "Invalid Email Or Password";
-
             case "ERROR_EMAIL_ALREADY_IN_USE":
             case "ERROR_CREDENTIAL_ALREADY_IN_USE":
                 return "this Email Is Already Used";
             default:
                 return "Something went wrong, Please try again Later";
-
         }
     }
 }
