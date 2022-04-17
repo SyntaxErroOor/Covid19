@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         intialization(view);
-
+        callApi();
         return view;
     }
 
@@ -70,7 +70,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         btnCheckup.setOnClickListener(this);
         mNav = getActivity().findViewById(R.id.bottom_navigation);
         mPieChart = view.findViewById(R.id.pie_chart);
-        callApi();
     }
 
     private void callApi() {
