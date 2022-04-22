@@ -62,7 +62,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     // Face Mask
     private static final int TF_OD_API_INPUT_SIZE = 224;
     private static final boolean TF_OD_API_IS_QUANTIZED = false;
-    private static final String TF_OD_API_MODEL_FILE = "mask_detector.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "fack_mask_detection.tflite";
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/mask_labelmap.txt";
 
     private static final DetectorMode MODE = DetectorMode.TF_OD_API;

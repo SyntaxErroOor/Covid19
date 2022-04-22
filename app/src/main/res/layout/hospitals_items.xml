@@ -46,21 +46,23 @@
         </TextView>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/address_hospital"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/hospital_name"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="2dp"
             android:layout_toEndOf="@id/image_hospital"
-            android:fontFamily="@font/cairo"
-            android:text="@string/hoisptal_address"
+            android:text="Mansoura University - el gomhoureya - st Mit Khamis - WA Kafr Al Mougi - EL DAKAHLEYA - Dakahlia - Governorate "
             android:textColor="@color/gary_dark"
             android:textSize="14sp"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMaxTextSize="13sp"
-            android:autoSizeMinTextSize="5sp"
             android:textStyle="normal"
-            android:id="@+id/address_hospital">
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeMaxTextSize="14sp"
+            android:autoSizeTextType="uniform"
+
+
+            >
 
 
         </TextView>
