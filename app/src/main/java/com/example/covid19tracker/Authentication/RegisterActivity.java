@@ -173,6 +173,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onSuccess(AuthResult authResult) {
                         String userID = FirebaseAuth.getInstance().getUid();
                         Map<String, String> user = new HashMap<>();
+                        user.put("user_image_url","");
                         user.put("fullName", fullName);
                         user.put("email", email);
                         user.put("phone", phone);
