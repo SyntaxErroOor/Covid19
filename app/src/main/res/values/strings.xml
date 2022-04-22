@@ -60,11 +60,11 @@
     <string name="next">Next</string>
     <string name="_1_of_3_answered">1 of 3 answered</string>
     <string name="plase_wear_a_mask_to_using_app">Please Wear A Mask To Use the Application</string>
-<<<<<<< HEAD
+
     <string name="hoisptal_name">El Sheikh Zayed Al Nahyan Hospital</string>
     <string name="hoisptal_address">El-Nasr Rd, Al Abageyah, El Khalifa, Cairo Governorate</string>
     <string name="Hospitals">Hospitals</string>
-=======
+
     <string name="change">Change</string>
->>>>>>> 158e3cd19c6624cb447d402b114528c2976086bf
+
 </resources>
