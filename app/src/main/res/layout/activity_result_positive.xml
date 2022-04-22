@@ -177,7 +177,7 @@
                 android:paddingTop="8dp"
                 android:paddingEnd="16dp"
                 android:paddingBottom="8dp"
-                android:text="@string/t_t_thome_t_t_t" />
+                android:text="@string/Hospitals" />
 
             <TextView
                 android:id="@+id/call_doctor_btn"

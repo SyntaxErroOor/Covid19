@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_hospital"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="100dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/src_image_hospital"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hospital_photo"></ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/hospital_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/image_hospital"
+            android:fontFamily="@font/cairo"
+            android:text="@string/hoisptal_name"
+            android:textColor="@color/blue_light"
+            android:textSize="15sp"
+            android:textStyle="normal">
+
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hospital_name"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/image_hospital"
+            android:fontFamily="@font/cairo"
+            android:text="@string/hoisptal_address"
+            android:textColor="@color/gary_dark"
+            android:textSize="14sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="13sp"
+            android:autoSizeMinTextSize="5sp"
+            android:textStyle="normal"
+            android:id="@+id/address_hospital">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

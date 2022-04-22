@@ -46,6 +46,8 @@ public class doctor_items_adapter extends RecyclerView.Adapter<doctor_items_adap
 
 
 
+
+
     public doctor_items_adapter(ArrayList<doctor_data> doctor_data_list)
     {
         this.doctor_data_list=doctor_data_list;

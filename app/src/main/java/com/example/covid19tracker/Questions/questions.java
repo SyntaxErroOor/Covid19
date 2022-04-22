@@ -243,22 +243,7 @@ public class questions extends AppCompatActivity {
                                 startActivity(i);
 
                             }
-                            /*
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             *
-                             * */
+
 
                         } else {
                             Toast.makeText(questions.this, "Plese Select!!!", Toast.LENGTH_SHORT).show();

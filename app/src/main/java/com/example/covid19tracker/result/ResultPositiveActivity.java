@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.example.covid19tracker.Call_Doctor.call_doctor;
 import com.example.covid19tracker.Home.HomeActivity;
 import com.example.covid19tracker.R;
+import com.example.covid19tracker.Hospitals.Hospitals;
+
 
 public class ResultPositiveActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView homeBtn, callDoctorBtn;
@@ -32,10 +34,10 @@ public class ResultPositiveActivity extends AppCompatActivity implements View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.home_btn:
-                Intent i = new Intent(this, HomeActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent i = new Intent(this, Hospitals.class);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
                 break;
             case R.id.call_doctor_btn:

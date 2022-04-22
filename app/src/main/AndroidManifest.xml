@@ -3,12 +3,11 @@
     package="com.example.covid19tracker">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.Covid19Tracker">
+        <activity
+            android:name=".Hospitals.Hospitals"
+            android:exported="false" />
         <activity
             android:name=".result.ResultNegativeActivity"
             android:exported="false" />
@@ -35,9 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Call_Doctor.call_doctor"
-            android:exported="false"/>
-
+        <activity
+            android:name=".Call_Doctor.call_doctor"
+            android:exported="false" />
         <activity
             android:name=".Home.HomeActivity"
             android:exported="false" />
@@ -47,9 +49,11 @@
         <activity
             android:name=".Authentication.LoginActivity"
             android:exported="false" />
-        <activity android:name=".Camera.DetectorActivity"
-            android:exported="false"/>
-        <activity android:name=".Camera.CameraActivity"
+        <activity
+            android:name=".Camera.DetectorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Camera.CameraActivity"
             android:exported="false" />
     </application>
 
