@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.covid19tracker.Camera;
 
 import android.content.Intent;
@@ -78,7 +62,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
     // Face Mask
     private static final int TF_OD_API_INPUT_SIZE = 224;
     private static final boolean TF_OD_API_IS_QUANTIZED = false;
-    private static final String TF_OD_API_MODEL_FILE = "mask_detector.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "fack_mask_detection.tflite";
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/mask_labelmap.txt";
 
     private static final DetectorMode MODE = DetectorMode.TF_OD_API;
