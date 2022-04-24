@@ -113,6 +113,7 @@ public class ProfileFragment extends Fragment implements EasyPermissions.Permiss
         }
 
     }
+
     private void getProfileData() {
         String userId = FirebaseAuth.getInstance().getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -146,45 +147,6 @@ public class ProfileFragment extends Fragment implements EasyPermissions.Permiss
                         Toast.makeText(getContext(), "SomeThing wrong Please Try Again Later", Toast.LENGTH_SHORT).show();
                     }
                 });
-    }
-
-
-    // Permissions
-    private void showSelectionDialog() {
-        AlertDialog.Builder selectDialog = new AlertDialog.Builder(getContext());
-        selectDialog.setTitle("Select Action");
-        String[] selectionDialogIteams = {
-                "Select Photo from Gallery",
-                "Capture Photo From Camera"};
-        selectDialog.setItems(selectionDialogIteams,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        switch (i) {
-                            case 0:
-                                break;
-                            case 1:
-                                takePhotoFromCamera();
-                                break;
-                        }
-                    }
-                });
-        selectDialog.show();
-    }
-
-    @AfterPermissionGranted(123)
-    private void takePhotoFromCamera() {
-        String[] cameraPermissions = new String[0];
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE};
-        }
-        if (EasyPermissions.hasPermissions(getContext(), cameraPermissions)) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(intent, CAMERA);
-        } else {
-            EasyPermissions.requestPermissions(this, "Access for camera",
-                    123, cameraPermissions);
-        }
     }
 
     @AfterPermissionGranted(101)
@@ -264,6 +226,7 @@ public class ProfileFragment extends Fragment implements EasyPermissions.Permiss
                     }
                 });
     }
+
 
     private void updateUserImage(StorageReference pathReference) {
         pathReference
