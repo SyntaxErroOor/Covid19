@@ -54,7 +54,7 @@ public class Hospitals extends AppCompatActivity {
         firestore_data = FirebaseFirestore.getInstance();
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage(" Getting Doctors Data...");
+        progressDialog.setMessage(" Getting Hospitals Data...");
         progressDialog.show();
         setContentView(R.layout.activity_hospitals);
         inidata();
